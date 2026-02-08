@@ -1,0 +1,217 @@
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  color: #1e3c72;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* App container */
+/* App container */
+.App {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 32px 16px 16px 16px;
+  background: rgba(255,255,255,0.98);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(30,60,114,0.10);
+  position: relative;
+  z-index: 1;
+}
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  color: #1e3c72;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Add a subtle pattern overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="%23cfdef3" fill-opacity="0.05"/><circle cx="20" cy="20" r="2" fill="%231e3c72" fill-opacity="0.08"/></svg>');
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Navigation menu */
+.navbar {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+  padding: 0.5rem 2rem;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 2rem;
+}
+.navbar-logo {
+  height: 56px;
+  margin-right: 1.5rem;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.10);
+  padding: 4px;
+}
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.navbar-link:hover {
+  color: #1e3c72;
+  background: #ffd700;
+  text-decoration: none;
+}
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.navbar-link:hover {
+  color: #ffd700;
+}
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #1e3c72;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(30,60,114,0.08);
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: linear-gradient(135deg, #f7fafc 60%, #e0eafc 100%);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(30,60,114,0.10);
+}
+th, td {
+  padding: 0.85rem 1.2rem;
+  text-align: left;
+}
+th {
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+  color: #ffd700;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+tr:nth-child(even) {
+  background: #f0f6ff;
+}
+tr:hover {
+  background: #ffd70022;
+}
+
+/* Links */
+a {
+  color: #2a5298;
+  text-decoration: underline;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+/* Misc */
+.logo-left {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.logo-left img {
+  height: 56px;
+  margin-right: 1.5rem;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.10);
+  padding: 4px;
+
+/* Links */
+a {
+  color: #2a5298;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+}
+  color: #ffd700;
+}
+
+/* Misc */
+.logo-left {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.logo-left img {
+  height: 56px;
+  margin-right: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .App {
+    padding: 10px;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    border-radius: 16px 16px 0 0;
+  }
+  .navbar-logo {
+    margin-bottom: 0.5rem;
+  }
+  .navbar-links {
+    gap: 1rem;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

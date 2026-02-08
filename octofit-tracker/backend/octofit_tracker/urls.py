@@ -33,14 +33,25 @@ router.register(r'activities', ActivityViewSet)
 router.register(r'workouts', WorkoutViewSet)
 router.register(r'leaderboard', LeaderboardViewSet)
 
+
+import os
+from urllib.parse import urljoin
+
 @api_view(['GET'])
 def api_root(request):
+    codespace_name = os.environ.get('CODESPACE_NAME')
+    if codespace_name:
+        base_url = f"https://{codespace_name}-8000.app.github.dev/api/"
+    else:
+        # fallback to request host (localhost or other)
+        scheme = 'https' if request.is_secure() else 'http'
+        base_url = f"{scheme}://{request.get_host()}/api/"
     return Response({
-        'users': request.build_absolute_uri('users/'),
-        'teams': request.build_absolute_uri('teams/'),
-        'activities': request.build_absolute_uri('activities/'),
-        'workouts': request.build_absolute_uri('workouts/'),
-        'leaderboard': request.build_absolute_uri('leaderboard/'),
+        'users': urljoin(base_url, 'users/'),
+        'teams': urljoin(base_url, 'teams/'),
+        'activities': urljoin(base_url, 'activities/'),
+        'workouts': urljoin(base_url, 'workouts/'),
+        'leaderboard': urljoin(base_url, 'leaderboard/'),
     })
 
 from django.urls import include
